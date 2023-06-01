@@ -92,7 +92,7 @@ $danhmuc = pdo_query($sql1);
                     <hr>
                     <ul class="list-unstyled">
                         <li>
-                            <span class="pro_price"><?php echo $giamoi; ?> đ</span>
+                            <span class="pro_price"><?php echo number_format($giamoi); ?> đ</span>
                         </li>
                         <li class="tax">Giá cũ: <?php echo $giacu; ?> đ</li>
                     </ul>
@@ -276,7 +276,7 @@ $danhmuc = pdo_query($sql1);
                                             <h4 class="product-title"><a
                                                         href="<?php echo $linksp; ?>"><?php echo $name; ?></a></h4>
                                             <p class="price">
-                                                <?php echo $giamoi; ?>
+                                                <?php echo number_format($giamoi); ?>
                                             </p>
                                         </div>
                                     </div>

@@ -76,8 +76,8 @@ if (isset($_SESSION['user'])) {
                 <tr class="thao">
                     <td><?php echo $id; ?></td>
                     <td><?php echo $name; ?></td>
-                    <td><?php echo $giacu; ?></td>
-                    <td><?php echo $giamoi; ?></td>
+                    <td><?php echo number_format($giacu); ?></td>
+                    <td><?php echo number_format($giamoi); ?></td>
                     <td><?php echo $hinh; ?></td>
                     <td><?php echo $luotxem; ?></td>
                     <td><?php echo $ngaytao; ?></td>

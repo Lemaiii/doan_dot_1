@@ -59,7 +59,7 @@ if(isset($_SESSION['user'])){
                 </td>
                 <td><?php echo $kh; ?></td>
                 <td><?php echo $countsp; ?></td>
-                <td><?php echo $bill['tongdh']; ?></td>
+                <td><?php echo number_format($bill['tongdh']); ?></td>
                 <td><?php echo $bill['ngaydathang']; ?></td>
                 <td><?php echo $ttdh; ?></td>
                 <td>

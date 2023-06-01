@@ -149,6 +149,7 @@ body{
 
 .main_container .container{
 	padding: 25px;
+	width: 100%;
 	height: calc(100% - 60px);
 	overflow: auto;
 }

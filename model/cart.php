@@ -46,8 +46,8 @@ function viewcart($del)
                     <td class="text-center" style="vertical-align: inherit;">
                         <?php echo $cart[4]; ?>
                     </td>
-                    <td class="text-left" style="vertical-align: inherit;"><?php echo $cart[3]; ?>đ</td>
-                    <td class="text-left" style="vertical-align: inherit;"><?php echo $thanhtien; ?>đ</td>
+                    <td class="text-left" style="vertical-align: inherit;"><?php echo number_format($cart[3]); ?>đ</td>
+                    <td class="text-left" style="vertical-align: inherit;"><?php echo number_format($thanhtien); ?>đ</td>
                     <?php echo $xoasp_td; ?>
                 </tr>
                 <?php $i += 1;
@@ -61,7 +61,7 @@ function viewcart($del)
             <table class="table table-bordered">
                 <tr>
                     <td class="text-left cart-total-title">Tổng tền:</td>
-                    <td class="text-right cart-total-price"><?php echo $tong; ?>đ</td>
+                    <td class="text-right cart-total-price"><?php echo number_format($tong); ?>đ</td>
                 </tr>
             </table>
         </div>

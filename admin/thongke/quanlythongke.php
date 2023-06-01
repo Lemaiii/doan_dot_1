@@ -48,9 +48,9 @@ if(isset($_SESSION['user'])){
                 <td><?php echo $madm; ?></td>
                 <td><?php echo $tendm; ?></td>
                 <td><?php echo $countsp; ?></td>
-                <td><?php echo $maxgiacu; ?></td>
-                <td><?php echo $mingiacu; ?></td>
-                <td><?php echo $avggiacu; ?></td>
+                <td><?php echo number_format($maxgiacu); ?></td>
+                <td><?php echo number_format($mingiacu); ?></td>
+                <td><?php echo number_format($avggiacu); ?></td>
             </tr>
         <?php } ?>
         </tbody>

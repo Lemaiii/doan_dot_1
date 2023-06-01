@@ -32,3 +32,35 @@ if(isset($_SESSION['user'])){
     <table class="table table-bordered table-striped datatable" id="table-2">
         <thead>
         <tr>
+            <th class="id_sp">ID</th>
+            <th class="maSP">Nội dung</th>
+            <th class="tenSP">ID user</th>
+            <th class="price">ID Sản phẩm</th>
+            <th class="img">Ngày bình luận</th>
+            <th class="xl">Chức năng</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        foreach ($listbinhluan as $binhluan) {
+            extract($binhluan);
+            $xoabl="index.php?act=xoabl&id=".$id; ?>
+            <tr>
+                <td>
+                    <?php echo $id; ?>
+                </td>
+                <td><?php echo $noidung; ?></td>
+                <td><?php echo $iduser; ?></td>
+                <td><?php echo $idsp; ?></td>
+                <td><?php echo $ngaybl; ?></td>
+                <td>
+                    <a href="<?php echo $xoabl; ?>" class="btn btn-danger btn-sm btn-icon icon-left"> <i class="entypo-cancel"></i>
+                        Xóa
+                    </a>
+                </td>
+            </tr>
+        <?php } ?>
+        </tbody>
+    </table>
+</div>
+<!--End New============-->

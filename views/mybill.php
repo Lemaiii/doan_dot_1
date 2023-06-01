@@ -52,7 +52,7 @@
                         <td>RABLE-'.$bill['id'].'</td>
                         <td>'.$bill['ngaydathang'].'</td>
                         <td>'.$countsp.'</td>
-                        <td>'.$bill['tongdh'].'</td>
+                        <td>'.number_format($bill['tongdh']).'</td>
                         <td>'.$ttdh.'</td>
                     </tr>';
                     }

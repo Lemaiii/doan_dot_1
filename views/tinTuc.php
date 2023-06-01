@@ -98,8 +98,8 @@
                                                     <h4 class="product-title"><a
                                                                 href="<?php echo $linksp; ?>"><?php echo $name; ?></a></h4>
                                                     <p class="price">
-                                                        <span class="price-new"><?php echo $giamoi; ?> đ</span>
-                                                        <span class="price-old"><?php echo $giacu; ?> đ</span>
+                                                        <span class="price-new"><?php echo number_format($giamoi); ?> đ</span>
+                                                        <span class="price-old"><?php echo number_format($giacu); ?> đ</span>
                                                     </p>
                                                 </div>
                                             </div>

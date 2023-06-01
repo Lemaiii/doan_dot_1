@@ -103,17 +103,58 @@ $user = (isset($_SESSION['user'])) ? $_SESSION['user'] : [];
 <!--                                <i class="fa fa-camera"></i>-->
 <!--                            </a>-->
 <!--                        </div>-->
-                    <div class="btn_search search_by_image" style="margin: 0 32px -6px 0">
+                    <div class="btn_search search_by_image" style="margin: 0 32px -6px 0;">
                         <form method="post" id="searchByImageForm" enctype="multipart/form-data">
                             <label for="fileToUpload" style="cursor: pointer;">
-                                <i class="fa fa-camera" aria-hidden="true" style="font-size: 20px; color: black"></i>
+                                <i 
+                                    class="fa fa-camera" 
+                                    aria-hidden="true" 
+                                    ondragover="uploadFileDragover(event)"
+                                    ondrop="drop(event)"
+                                    style="font-size: 20px;
+                                        color: black; 
+                                        width: 200px; 
+                                        height: 50px; 
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        border-radius: 10px;
+                                        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;"
+                                ></i>
                             </label>
                             <input style="display:none;" id="fileToUpload" type="file" name="fileToUpload">
                         </form>
                     </div>
 
                     <script>
-                        document.getElementById("fileToUpload").onchange = function(e) {
+                        function drop(event) {
+                            event.preventDefault();
+                            file = event.dataTransfer.files[0]
+                            const formData = new FormData();
+                            formData.append("imagefile", file);
+                            var xhr = new XMLHttpRequest();
+                            xhr.open("POST", "<?php echo FLASK_API_URL;?>");
+                            xhr.onload = function() {
+                                if (xhr.status >= 200 && xhr.status < 300) {
+                                    let res = JSON.stringify(JSON.parse(xhr.responseText).data);
+                                    let text = JSON.stringify(JSON.parse(xhr.responseText).img);
+                                    const idString = JSON.parse(res).join();
+                                    const url = `/web/views/index.php?act=sanpham&id=${idString}&img=${text}`;
+                                    window.location.href = url;
+
+                                } else {
+                                    console.error('Error: ' + xhr.statusText);
+                                }
+                            };
+                            xhr.send(formData);
+                        }
+
+                        function uploadFileDragover(event) {
+                            event.preventDefault();
+                        }
+
+                        function uploadFile(e) {
+                            console.log("upload file")
                             e.preventDefault(); // Prevent the form from being submitted in the traditional way
                             const formData = new FormData();
                             const file = document.getElementById("fileToUpload").files[0];
@@ -134,6 +175,10 @@ $user = (isset($_SESSION['user'])) ? $_SESSION['user'] : [];
                             };
                             xhr.send(formData);
                         };
+
+                        document.getElementById("fileToUpload").onchange = uploadFile;
+                        
+
                     </script>
 
                         <div class="btn_search">

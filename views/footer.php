@@ -67,7 +67,7 @@
                                                         dài
                                                     </p></div>
                                                 <div class="testimonial-content">
-                                                    <div class="testimonial-author">Hoa Nguyễn,</div>
+                                                    <div class="testimonial-author">Mai Lee,</div>
                                                     <div class="testimonial-customer">Customer</div>
                                                 </div>
                                             </div>

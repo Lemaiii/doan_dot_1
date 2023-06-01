@@ -38,7 +38,7 @@
             <p>Đặt hàng thành công !</p>
             <p>RABLE: <?=$bill['id'];?></p>
             <p>Ngày đặt hàng: <?=$bill['ngaydathang'];?></p>
-            <p>Tổng đơn hàng: <?=$bill['tongdh'];?> VNĐ</p>
+            <p>Tổng đơn hàng: <?=number_format($bill['tongdh']);?> VNĐ</p>
             <p>Phương thức thanh toán: <?php $pttt=get_pttt($bill['bill_pttt']); ?></p>
             <div class="buttons">
                 <div class="pull-right"><a href="index.php?act=sanpham"

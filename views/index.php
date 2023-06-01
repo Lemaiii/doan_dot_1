@@ -190,7 +190,7 @@ if ((isset($_GET['act'])) && ($_GET['act'])) {
                 insert_cart($_SESSION['user']['id'], $cart[0], $cart[2], $cart[1], $cart[3], $cart[4], $cart[5], $idbill);
             }
             //xóa session cart
-            $_SESSION['cart'] = [];
+            $_SESSION['mycart'] = [];
             // }   
             // $name=$_POST['name'];
             // $tel=$_POST['tell'];

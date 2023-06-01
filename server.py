@@ -58,7 +58,8 @@ generator = datagen.flow_from_dataframe(dataframe=data_frame,
                                         batch_size=32,
                                         shuffle=False,
                                         classes=None)
-base_model = VGG16(include_top=False, input_shape=(img_size,img_size,3))
+#loại bỏ lớp Fully Connected trên cùng
+base_model = VGG16(include_top=False, input_shape=(img_size,img_size,3)) 
 
 for layer in base_model.layers:
     layer.trainable = False
